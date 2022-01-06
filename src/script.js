@@ -90,23 +90,22 @@ search("New York");
 function convertToC (event) {
     event.preventDefault();
     let tempElement = document.querySelector("#today-temp");
-    tempElement.innerHTML = Math.round(celsiusTemp);
-celsiusLink.classList.add("active");
-fahrenheitLink.classList.remove("active");
+   fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+let celsiusTemp = (((fahrenheitTemp -32)*5)/9) +32;
+tempElement.innerHTML = Math.round(celsiusTemp);
 }
-let celsiusLink = document.querySelector("#c-link");
-celsiusLink.addEventListener("click", convertToC);
-let celsiusTemp = null;
-
 
 function convertToF (event) {
     event.preventDefault();
-    let tempElement = document.querySelector("#today-temp");
-    let fahrenheitTemp = ((celsiusTemp*9)/5) +32; 
-    tempElement.innerHTML = Math.round(fahrenheitTemp);
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
+   fahrenheitLink.classList.add("active");
+   celsiusLink.classList.remove("active");
+   let tempElement = document.querySelector("#today-temp");
+   tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
+let fahrenheitTemp = null;
+let celsiusLink = document.querySelector("#c-link");
+celsiusLink.addEventListener("click", convertToC);
 let fahrenheitLink = document.querySelector("#f-link");
 fahrenheitLink.addEventListener("click", convertToF);
 
