@@ -36,6 +36,9 @@ body {
     list-style: none;
   }
   
+  footer {
+      text-align: center;
+  }
   #date {
     color: #c9dde0;
     padding: 5px;
